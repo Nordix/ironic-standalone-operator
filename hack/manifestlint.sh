@@ -26,7 +26,7 @@ if [ "${IS_CONTAINER}" != "false" ]; then
         --ignore-filename-pattern kustom --ignore-filename-pattern patch \
         --ignore-filename-pattern clusterctl \
         --output tap \
-        config/ examples/
+        config/
 else
     "${CONTAINER_RUNTIME}" run --rm \
         --env IS_CONTAINER=TRUE \
