@@ -43,7 +43,7 @@ export CONTAINER_RUNTIME=podman
 Run these before every pull request:
 
 ```bash
-make test          # generate + fmt + vet + unit tests
+make test          # manifests + generate + fmt + vet + unit tests
 make lint          # golangci-lint across all modules
 ```
 
@@ -78,12 +78,13 @@ corresponding file types:
 | `./hack/markdownlint.sh` | After editing Markdown files |
 | `./hack/manifestlint.sh` | After editing Kubernetes manifests under `config/` |
 | `./hack/shellcheck.sh` | After editing shell scripts |
+| `./hack/yamllint.sh` | After editing YAML files |
 
 The hack scripts run inside containers automatically, so they match the CI
 environment exactly.
 
-CI also runs **yamllint** and **link checking** on pull requests; these use
-shared workflows and do not have local equivalents.
+CI also runs **link checking** on pull requests; it uses a shared workflow
+and has no local equivalent.
 
 ## Functional tests
 
